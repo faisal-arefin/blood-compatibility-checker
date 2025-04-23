@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An interactive blood compatibility checker that helps you determine which blood types you can donate to and receive from, while also providing facts about different blood types.">
+    <meta name="keywords" content="healthcare, blood, blood type, blood compatibility, blood donation, blood transfusion, blood groups, A+, A-, B+, B-, AB+, AB-, O+, O-">
+    <meta name="author" content="Faisal Arefin">
+    <meta name="robots" content="index,follow">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Blood Compatibility Checker</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Blood Compatibility Checker</h1>
+            <p>Find which blood types you can donate to and receive from</p>
+        </div>
+
+        <div class="content">
+            <div class="form-group">
+                <label for="blood-type-dropdown">Select Your Blood Type:</label>
+                <div class="dropdown">
+                    <button id="dropdown-toggle" class="dropdown-toggle">
+                        <span id="selected-value">Choose blood type</span>
+                        <span>▼</span>
+                    </button>
+                    <div id="dropdown-menu" class="dropdown-menu">
+                        <div class="dropdown-menu-grid">
+                            <div class="dropdown-item" data-value="A+">
+                                <span class="dropdown-item-color a-pos"></span>A+
+                            </div>
+                            <div class="dropdown-item" data-value="A-">
+                                <span class="dropdown-item-color a-neg"></span>A-
+                            </div>
+                            <div class="dropdown-item" data-value="B+">
+                                <span class="dropdown-item-color b-pos"></span>B+
+                            </div>
+                            <div class="dropdown-item" data-value="B-">
+                                <span class="dropdown-item-color b-neg"></span>B-
+                            </div>
+                            <div class="dropdown-item" data-value="AB+">
+                                <span class="dropdown-item-color ab-pos"></span>AB+
+                            </div>
+                            <div class="dropdown-item" data-value="AB-">
+                                <span class="dropdown-item-color ab-neg"></span>AB-
+                            </div>
+                            <div class="dropdown-item" data-value="O+">
+                                <span class="dropdown-item-color o-pos"></span>O+
+                            </div>
+                            <div class="dropdown-item" data-value="O-">
+                                <span class="dropdown-item-color o-neg"></span>O-
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Or click to select:</label>
+                <div class="blood-type-grid">
+                    <button class="blood-type-btn a-pos" data-type="A+">A+</button>
+                    <button class="blood-type-btn a-neg" data-type="A-">A-</button>
+                    <button class="blood-type-btn b-pos" data-type="B+">B+</button>
+                    <button class="blood-type-btn b-neg" data-type="B-">B-</button>
+                    <button class="blood-type-btn ab-pos" data-type="AB+">AB+</button>
+                    <button class="blood-type-btn ab-neg" data-type="AB-">AB-</button>
+                    <button class="blood-type-btn o-pos" data-type="O+">O+</button>
+                    <button class="blood-type-btn o-neg" data-type="O-">O-</button>
+                </div>
+            </div>
+
+            <div id="results" class="results">
+                <div class="selected-blood-type">
+                    <div id="blood-type-circle" class="blood-type-circle">
+                        <span id="blood-type-display"></span>
+                    </div>
+                </div>
+
+                <div class="compatibility-cards">
+                    <div class="compatibility-card">
+                        <div class="card-header donate-header">
+                            <h3>Can Donate To:</h3>
+                        </div>
+                        <div id="donate-grid" class="blood-types-grid">
+                        </div>
+                    </div>
+
+                    <div class="compatibility-card">
+                        <div class="card-header receive-header">
+                            <h3>Can Receive From:</h3>
+                        </div>
+                        <div id="receive-grid" class="blood-types-grid">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="facts-box">
+                    <h3>Blood Type Facts:</h3>
+                    <ul id="facts-list" class="facts-list">
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Always consult a healthcare professional for blood compatibility advice.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
